@@ -4,9 +4,14 @@ Cool fish functions.
 
 ### di.fish
 
-Starts mplayer (`brew install mplayer`) for DI.fm channels. `di channels` lists the channels, `di <channel>` starts playing one.
+Requires: curl, mplayer, and ack (brew).
 
-If you have a premium account, enter your ID in the `premium_id` variable.
+Starts mplayer for DI.fm channels. `di channels` lists the channels, `di <channel>` starts playing one. 
+If you have a premium account, set a `DI_FM_PREMIUM_ID` environment variable with your ID. In `config.fish`:
+
+```
+set DI_FM_PREMIUM_KEY a1b2c3d4e5
+```
 
 ### soma.fish
 

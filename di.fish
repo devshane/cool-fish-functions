@@ -1,6 +1,5 @@
 function di
     set player "mplayer -cache 512 -cache-min 30 -msgcolor -playlist "
-    set premium_id "" # enter your premium_id if you have one
 
     count $argv | read args
     if test $args = 1
@@ -9,8 +8,8 @@ function di
                 | ack 'data-tunein-url="http://www.di.fm/(.*?)"' --output='$1' \
                 | sort | uniq | column
         else
-            if test $premium_id != ""
-                set url "$player 'http://listen.di.fm/premium_high/$argv.pls?$premium_id'"
+            if test $DI_FM_PREMIUM_ID != ""
+                set url "$player 'http://listen.di.fm/premium_high/$argv.pls?$DI_FM_PREMIUM_ID'"
             else
                 set url "$player 'http://listen.di.fm/public3/$argv.pls'"
             end
