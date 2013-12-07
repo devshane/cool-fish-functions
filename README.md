@@ -4,7 +4,7 @@ Cool fish functions.
 
 ### di.fish
 
-Requires: curl, mplayer, and ack (brew).
+Requires: curl, mplayer, and ack. You can install them with brew.
 
 Starts mplayer for DI.fm channels. `di channels` lists the channels, `di <channel>` starts playing one. 
 If you have a premium account, set a `DI_FM_PREMIUM_ID` environment variable with your ID. In `config.fish`:
