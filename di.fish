@@ -4,7 +4,7 @@ function di
 
     count $argv | read args
     if test $args = 1
-        if test $argv = "stations"
+        if test $argv = "channels"
             curl --silent http://www.di.fm \
                 | ack 'data-tunein-url="http://www.di.fm/(.*?)"' --output='$1' \
                 | sort | uniq | column
@@ -18,7 +18,7 @@ function di
         end
     else
         echo
-        echo "di stations       list available stations"
+        echo "di channels       list available channels"
         echo "di <channel slug> play a channel"
         echo
     end
