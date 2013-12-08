@@ -11,6 +11,8 @@ function di
     # [potentially] update channel list
     if [ -e "$channel_list" ]
       find $channel_list -mmin +1440 | read refresh_file
+    else
+      set refresh_file "x"
     end
     if [ "" != $refresh_file ]
       echo "updating channel list"
