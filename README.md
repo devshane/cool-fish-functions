@@ -6,16 +6,23 @@ Cool fish functions.
 
 Requires: curl, mplayer, and ack. You can install them with brew.
 
-Starts mplayer for DI.fm channels. `di channels` lists the channels, `di <channel>` starts playing one. 
-If you have a premium account, set a `DI_FM_PREMIUM_ID` environment variable with your ID. In `config.fish`:
+Starts mplayer for DI.fm channels. `di channels` lists the channels, `di <channel>` starts playing one. You
+can set environment variables to modify behavior:
 
 ```
-set DI_FM_PREMIUM_KEY a1b2c3d4e5
+DI_FM_PREMIUM_KEY: set this to your premium id to enable premium content
+DI_FM_HIDE_STDERR: set this to 1 to hide all stderr output
+DI_FM_TITLE_ONLY : set this to 1 to only display song titles
 ```
 
 ### soma.fish
 
-Similar thing for somafm.com. No channel listing cuz hard.
+Similar thing for somafm.com. No channel listing cuz hard. It also recognizes some environment variables:
+
+```
+SOMA_HIDE_STDERR: set this to 1 to hide all stderr output
+SOMA_TITLE_ONLY : set this to 1 to only display song titles
+```
 
 ### ip.fish
 
