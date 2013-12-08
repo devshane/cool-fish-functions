@@ -1,5 +1,5 @@
 function di
-  set player "mplayer -cache 512 -cache-min 30 -msgcolor -playlist "
+  set player "mplayer -cache 512 -cache-min 30 -msgcolor -playlist"
   set channel_list "/tmp/di_channel_list"
   set refresh_file ""
 
@@ -35,12 +35,8 @@ function di
         set cmdline "$player 'http://listen.di.fm/public3/$argv.pls'"
       end
             
-      if [ $DI_FM_HIDE_STDERR = 1 ]
-        set cmdline "$cmdline 2>&1"
-      end
-
       if [ $DI_FM_TITLE_ONLY = 1 ]
-        set cmdline "$cmdline | ack \"StreamTitle='(.*?)'\" --output='\$1'"
+        set cmdline "$cmdline 2>&1 | ack \"StreamTitle='(.*?)'\" --output='\$1'"
       end
 
       eval $cmdline
@@ -53,7 +49,6 @@ function di
     echo "You can set environment variables to modify behavior:"
     echo
     echo "DI_FM_PREMIUM_ID : set to your premium id to enable premium content"
-    echo "DI_FM_HIDE_STDERR: when set to 1, redirects stderr to /dev/null"
     echo "DI_FM_TITLE_ONLY : when set to 1, only display the current song title"
     echo
   end
