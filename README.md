@@ -15,6 +15,10 @@ DI_FM_HIDE_STDERR: set this to 1 to hide all stderr output
 DI_FM_TITLE_ONLY : set this to 1 to only display song titles
 ```
 
+The channel list is updated once a day. To force a refresh, delete `/tmp/di_channel_list`.
+
+The script enables tab-completion for channel names.
+
 ### soma.fish
 
 Similar thing for somafm.com. No channel listing cuz hard. It also recognizes some environment variables:
