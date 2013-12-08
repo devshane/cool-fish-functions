@@ -1,13 +1,10 @@
 function di
-  set hide_stderr 0       # if 1, hide all stderr output
-  set title_only 0        # if 1, only show song titles
   set player "mplayer -cache 512 -cache-min 30 -msgcolor -playlist "
   set channel_list "/tmp/di_channel_list"
   set refresh_file ""
 
   count $argv | read args
   if [ $args = 1 ]
-
     # [potentially] update channel list
     if [ -e "$channel_list" ]
       find $channel_list -mmin +1440 | read refresh_file
@@ -38,11 +35,11 @@ function di
         set cmdline "$player 'http://listen.di.fm/public3/$argv.pls'"
       end
             
-      if [ $hide_stderr = 1 ]
+      if [ $DI_FM_HIDE_STDERR = 1 ]
         set cmdline "$cmdline 2>&1"
       end
 
-      if [ $title_only = 1 ]
+      if [ $DI_FM_TITLE_ONLY = 1 ]
         set cmdline "$cmdline | ack \"StreamTitle='(.*?)'\" --output='\$1'"
       end
 
@@ -52,6 +49,12 @@ function di
     echo
     echo "di channels       list available channels"
     echo "di <channel slug> play a channel"
+    echo
+    echo "You can set environment variables to modify behavior:"
+    echo
+    echo "DI_FM_PREMIUM_ID : set to your premium id to enable premium content"
+    echo "DI_FM_HIDE_STDERR: when set to 1, redirects stderr to /dev/null"
+    echo "DI_FM_TITLE_ONLY : when set to 1, only display the current song title"
     echo
   end
 end
