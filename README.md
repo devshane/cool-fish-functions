@@ -11,7 +11,6 @@ can set environment variables to modify behavior:
 
 ```
 DI_FM_PREMIUM_KEY: set this to your premium id to enable premium content
-DI_FM_HIDE_STDERR: set this to 1 to hide all stderr output
 DI_FM_TITLE_ONLY : set this to 1 to only display song titles
 ```
 
@@ -24,7 +23,6 @@ The script enables tab-completion for channel names.
 Similar thing for somafm.com. No channel listing cuz hard. It also recognizes some environment variables:
 
 ```
-SOMA_HIDE_STDERR: set this to 1 to hide all stderr output
 SOMA_TITLE_ONLY : set this to 1 to only display song titles
 ```
 
