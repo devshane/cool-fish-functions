@@ -20,7 +20,7 @@ The script enables tab-completion for channel names.
 
 ### soma.fish
 
-Similar thing for somafm.com. No channel listing cuz hard. It also recognizes some environment variables:
+Similar thing for somafm.com. It also recognizes some environment variables:
 
 ```
 SOMA_TITLE_ONLY : set this to 1 to only display song titles
