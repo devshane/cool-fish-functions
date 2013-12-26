@@ -34,3 +34,11 @@ Various ways to get info about your current IP.
 
 A safe rm that moves things to ~/.Trash.
 
+### pj.fish
+
+Pretty json printer using python.
+
+### update.fish
+
+A brew updater/cleaner-upper.
+
