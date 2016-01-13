@@ -42,3 +42,6 @@ Pretty json printer using python.
 
 A brew updater/cleaner-upper.
 
+### wpset.fish
+
+Sets background wallpaper on all desktops.
